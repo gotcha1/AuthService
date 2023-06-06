@@ -33,6 +33,6 @@ pylama -o setup.cfg src
 pytest
 
 ## API document:
- - Start the service by reffering to "Running the service locally"
+ - Start the service by any of the method mentioned above
  - From the browser open: http://localhost:8087/docs
  - The page will display all the supported API's and format to use them
