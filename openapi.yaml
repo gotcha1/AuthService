@@ -93,9 +93,13 @@ components:
         username:
           title: Username
           type: string
+          description: Desired username for the account, with a minimum length of 3 characters and a maximum length of 32 characters
         password:
           title: Password
           type: string
+          description: |-
+            Password for the account, with a minimum length of 8 characters and a maximum length of 32 characters
+                containing at least 1 uppercase letter, 1 lowercase letter, and 1 number.
       additionalProperties: false
       example:
         username: testuser
@@ -110,11 +114,11 @@ components:
         success:
           title: Success
           type: boolean
-          description: Indicates the result of the account creation process
+          description: Indicates the result of the account creation process.
         reason:
           title: Reason
           type: string
-          description: Specifies the reason for a failed account creation process
+          description: Specifies the reason for a failed account creation process.
       example:
         success: true
     ValidationError:
