@@ -1,0 +1,140 @@
+openapi: 3.0.2
+info:
+  title: Auth Sevice
+  description: |2-
+
+            service: Auth Sevice
+            version: 1.0.0
+            
+  version: 1.0.0
+paths:
+  /health:
+    get:
+      tags:
+        - health
+      summary: Health
+      operationId: health_health_get
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema: {}
+  /user/create:
+    post:
+      tags:
+        - user
+      summary: Create User
+      description: To create a user account with password
+      operationId: create_user_user_create_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+  /user/verify:
+    post:
+      tags:
+        - user
+      summary: Verify User
+      description: To verify account and password
+      operationId: verify_user_user_verify_post
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/UserRequest'
+        required: true
+      responses:
+        '200':
+          description: Successful Response
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/UserResponse'
+        '422':
+          description: Validation Error
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/HTTPValidationError'
+components:
+  schemas:
+    HTTPValidationError:
+      title: HTTPValidationError
+      type: object
+      properties:
+        detail:
+          title: Detail
+          type: array
+          items:
+            $ref: '#/components/schemas/ValidationError'
+    UserRequest:
+      title: UserRequest
+      required:
+        - username
+        - password
+      type: object
+      properties:
+        username:
+          title: Username
+          type: string
+        password:
+          title: Password
+          type: string
+      additionalProperties: false
+      example:
+        username: testuser
+        password: Password1
+    UserResponse:
+      title: UserResponse
+      required:
+        - success
+        - reason
+      type: object
+      properties:
+        success:
+          title: Success
+          type: boolean
+          description: Indicates the result of the account creation process
+        reason:
+          title: Reason
+          type: string
+          description: Specifies the reason for a failed account creation process
+      example:
+        success: true
+    ValidationError:
+      title: ValidationError
+      required:
+        - loc
+        - msg
+        - type
+      type: object
+      properties:
+        loc:
+          title: Location
+          type: array
+          items:
+            anyOf:
+              - type: string
+              - type: integer
+        msg:
+          title: Message
+          type: string
+        type:
+          title: Error Type
+          type: string
