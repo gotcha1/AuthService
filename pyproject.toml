@@ -1,0 +1,26 @@
+[tool.poetry]
+name = "authservice"
+version = "0.1.0"
+description = "A REST api service to create and validate user accounts"
+authors = ["Pradeep Kumar Kadali"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+uvicorn = "^0.22.0"
+idna = "^3.4"
+motor = "^3.1.2"
+beanie = "^1.19.2"
+fastapi = "^0.96.0"
+mongomock-motor = "^0.0.19"
+
+
+[tool.poetry.group.dev.dependencies]
+pytest-asyncio = "^0.21.0"
+httpx = "^0.24.1"
+pylama = "^8.4.1"
+pycodestyle = "^2.10.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"

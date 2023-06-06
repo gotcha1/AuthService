@@ -1,0 +1,21 @@
+version: '3.5'
+
+services:
+  authservice:
+    container_name: auth-service
+    build: .
+    environment:
+      - DB_HOST_NAME=mongodb
+    volumes:
+      - ./src/app:/var/app
+    ports:
+      - 8087:8080
+    depends_on:
+      - db
+  db:
+    image: mongo:latest
+    container_name: mongodb
+    ports:
+      - 27017:27017
+    volumes:
+      - ./data/db:/data/db
