@@ -36,3 +36,14 @@ pytest
  - Start the service by any of the method mentioned above
  - From the browser open: http://localhost:8087/docs
  - The page will display all the supported API's and format to use them
+ 
+ # API document without running the service
+  - For offline doc reffer to openapi.yml file
+  - For documentation with UI, go swagger editor, https://editor.swagger.io/
+    Click on "File"
+    Select "Import file"
+    Select the file "openapi.yml"
+    
+    ![image](https://github.com/gotcha1/AuthService/assets/51114133/beeee3ae-6832-41a3-9d69-c91fd9888f07)
+
+ 
