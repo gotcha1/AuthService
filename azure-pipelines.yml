@@ -22,6 +22,6 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: '**/docker-compose.yml'
-    projectName: 'AuthService'
+    projectName: 'Dev'
     action: 'Build services'
     includeLatestTag: true
