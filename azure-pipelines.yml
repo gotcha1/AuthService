@@ -34,5 +34,5 @@ steps:
     awsCredentials: 'AWS'
     regionName: '$(AWS_REGION)'
     imageSource: 'imagename'
-    sourceImageName: 'dev_$(Build.Repository.Name)'
+    sourceImageName: 'dev_authservice'
     repositoryName: '$(AWS_ECR_AUTH_SERVICE)'
