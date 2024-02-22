@@ -25,7 +25,7 @@ steps:
   inputs:
     containerregistrytype: 'Container Registry'
     dockerComposeFile: '**/docker-compose.yml'
-    projectName: 'Dev'
+    projectName: 'dev'
     action: 'Build services'
     includeLatestTag: true
 
@@ -34,5 +34,5 @@ steps:
     awsCredentials: 'AWS'
     regionName: '$(AWS_REGION)'
     imageSource: 'imagename'
-    sourceImageName: 'Dev_$(Build.Repository.Name)'
+    sourceImageName: 'dev_$(Build.Repository.Name)'
     repositoryName: '$(AWS_ECR_AUTH_SERVICE)'
