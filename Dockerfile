@@ -29,7 +29,6 @@ RUN apt-get update \
   && rm -rf /var/lib/apt/lists/* \
   && pip install --upgrade pip
 
-## set impacket
 
 COPY ./src/app /app
 WORKDIR /app
